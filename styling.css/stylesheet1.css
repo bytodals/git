@@ -1,0 +1,139 @@
+/* /Base style */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 250px 1fr;;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    grid-template-areas: 
+    "header header " "sidebar content"
+    "footer footer";
+}
+
+.header{
+
+    grid-area: header;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar{
+
+    grid-area: sidebar;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+.content{
+
+    grid-area: content;
+    padding: 20px;
+}
+
+.footer{
+
+    grid-area: footer;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Flexbox sidebar */
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.menu-item{
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+
+}
+.menu-item:hover{
+    background-color: #495057;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.card{
+    background-color: #e9ecef;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    /* /3 card per row */
+    width:calc(33.333% - 20px) ; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.container{
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(3,1fr);
+    /* grid-auto-rows: 100%; */
+    grid-template-rows: repeat(3,1fr);
+    
+    grid-template-areas: 'NewArea ';
+
+    background-color: dodgerblue;
+    padding: 10px;
+    width: 80%;
+}
+
+.container div{
+    background-color: #088398;
+    border: 2px solid #333;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+div .i1{
+    background-color: #89f9dc;
+    grid-area: 'NewArea';
+}
+div .i2{
+    background-color: #89f9dc;
+    grid-column-start: 2;
+    grid-column-end: 2;
+
+}
+div .i3{
+    background-color: #89f9dc;
+    grid-row-start: 4;
+    grid-row-end: 2;
+
+}
+
+div .i4{
+    background-color: #89f9dc;
+    grid-row: 2/3;
+    grid-column: 2/3;
+
+}
